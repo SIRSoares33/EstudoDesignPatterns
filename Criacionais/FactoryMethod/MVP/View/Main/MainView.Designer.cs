@@ -50,7 +50,7 @@ partial class MainView
         label1.Name = "label1";
         label1.Size = new Size(184, 25);
         label1.TabIndex = 0;
-        label1.Text = "Mobiliando Quarto";
+        label1.Text = "Mobiliando Casa";
         // 
         // cmbMob
         // 
