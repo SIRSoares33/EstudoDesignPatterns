@@ -11,32 +11,32 @@ namespace FactoryMethod.MVP.Model
         /// <summary>
         /// Factory creator to create the mobilia factory
         /// </summary>
-        private readonly IMobiliaFactoryCreator _mobiliaFactoryCreator;
+        private readonly IFurnitureFactoryCreator _furnitureFactoryCreator;
         /// <summary>
         /// Adapter to convert the mobilia list to a list of IMobilia objects
         /// </summary>
-        private readonly IMobiliaAdapter _mobiliaAdapter;
+        private readonly IFurnitureAdapter _furnitureAdapter;
         /// <summary>
         /// Service to create the relatory
         /// </summary>
-        private readonly IMobiliaRelatory _createMobiliaRelatory;
+        private readonly IFurnitureRelatory _furnitureRelatory;
         #endregion
 
         #region Constructor
-        public MainModel(IMobiliaFactoryCreator mobiliaFactory, IMobiliaAdapter mobiliaAdapter, IMobiliaRelatory createMobiliaRelatory)
+        public MainModel(IFurnitureFactoryCreator furnitureFactory, IFurnitureAdapter furnitureAdapter, IFurnitureRelatory furnitureRelatory)
         {
-            _mobiliaFactoryCreator = mobiliaFactory;
-            _mobiliaAdapter        = mobiliaAdapter;
-            _createMobiliaRelatory = createMobiliaRelatory;
+            _furnitureFactoryCreator = furnitureFactory;
+            _furnitureAdapter        = furnitureAdapter;
+            _furnitureRelatory       = furnitureRelatory;
         }
         #endregion
 
         #region IMainModel Methods
-        public Task<List<IMobilia>> ConvertMobiliaListStringToIMobiliaList(List<string> mobList)
-            => Task.Run(() => _mobiliaAdapter.ConvertMobiliaListStringToIMobiliaList(mobList, _mobiliaFactoryCreator));
+        public Task<List<IFurniture>> ConvertMobiliaListStringToIFurnitureList(List<string> furnitureListInString)
+            => Task.Run(() => _furnitureAdapter.ConvertMobiliaListStringToIMobiliaList(furnitureListInString, _furnitureFactoryCreator));
 
-        public Task CreateRelatory(List<IMobilia> mobList)
-            => _createMobiliaRelatory.CreateRelatoryByList(mobList);
+        public Task CreateFurnitureRelatory(List<IFurniture> furnituries)
+            => _furnitureRelatory.CreateRelatoryByList(furnituries);
         #endregion
     }
 } 

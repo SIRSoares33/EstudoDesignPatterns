@@ -13,7 +13,7 @@ namespace FactoryMethod.MVP.Presenter
         public MainPresenter(IMainView view, IMainModel model)
         {
             _view = view;
-            _view.SendMobilia += SendMobAsync;
+            _view.SendFurniture += ValidateFurnitureAsync;
 
             _model = model;
         }
@@ -23,13 +23,13 @@ namespace FactoryMethod.MVP.Presenter
         /// <summary>
         /// Send mobilia list to the Txt.
         /// </summary>
-        private async void SendMobAsync()
+        private async void ValidateFurnitureAsync()
         {
             try
             {
-                var IMobiliaList = await _model.ConvertMobiliaListStringToIMobiliaList(_view.MobListInString);
+                var IFurnitureList = await _model.ConvertMobiliaListStringToIFurnitureList(_view.FurnitureListInString);
 
-                await _model.CreateRelatory(IMobiliaList);
+                await _model.CreateFurnitureRelatory(IFurnitureList);
 
                 _view.ShowMessageBox("Mobilia list sent successfully", "Success", MessageBoxIcon.Information, MessageBoxButtons.OK);
             }
