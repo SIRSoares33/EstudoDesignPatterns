@@ -7,12 +7,12 @@ namespace FactoryMethod.MVP.View.Main
         /// <summary>
         /// List of mobilia in string format
         /// </summary>
-        List<string> MobListInString { get; }
+        List<string> FurnitureListInString { get; }
 
         /// <summary>
         /// Event to send the mobilia list
         /// </summary>
-        event Action? SendMobilia;
+        event Action? SendFurniture;
 
         /// <summary>
         /// Show a message box
