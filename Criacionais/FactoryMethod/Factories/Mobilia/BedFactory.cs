@@ -3,8 +3,8 @@ using FactoryMethod.factories;
 
 namespace FactoryMethod.Factories
 {
-    public class BedFactory : IMobiliaFactory
+    public class BedFactory : IFurnitureFactory
     {
-        public IMobilia CreateMobilia() => new Bed();
+        public IFurniture CreateFurniture() => new Bed();
     }
 }

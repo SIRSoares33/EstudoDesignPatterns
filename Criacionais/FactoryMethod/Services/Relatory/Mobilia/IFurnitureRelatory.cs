@@ -5,13 +5,13 @@ namespace FactoryMethod.Services
     /// <summary>
     /// Create a relatory with the mobilia list
     /// </summary>
-    public interface IMobiliaRelatory
+    public interface IFurnitureRelatory
     {
         /// <summary>
         /// Create a relatory with the mobilia list
         /// </summary>
-        /// <param name="mobList"></param>
+        /// <param name="relatories"></param>
         /// <returns></returns>
-        Task CreateRelatoryByList(List<IMobilia> mobList);
+        Task CreateRelatoryByList(List<IFurniture> relatories);
     }
 }

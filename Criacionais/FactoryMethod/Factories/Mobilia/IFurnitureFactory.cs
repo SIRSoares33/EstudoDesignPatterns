@@ -5,8 +5,8 @@ namespace FactoryMethod.factories
     /// <summary>
     /// Factory to create a mobilia
     /// </summary>
-    public interface IMobiliaFactory
+    public interface IFurnitureFactory
     {
-        IMobilia CreateMobilia();
+        IFurniture CreateFurniture();
     }
 }

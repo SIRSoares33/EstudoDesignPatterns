@@ -4,21 +4,21 @@ namespace FactoryMethod.Services
 {
     public class TextRelatoryFormatter : IRelatoryFormatter
     {
-        public Task Format(StreamWriter writer, List<IMobilia> mobList)
+        public Task Format(StreamWriter writer, List<IFurniture> furnituries)
         {
             writer.WriteLine("Mobilia List");
             writer.WriteLine("-------------");
 
-            foreach (var mobilia in mobList)
+            foreach (IFurniture furniture in furnituries)
             {
-                writer.WriteLine("Mobilia: " + mobilia.Name);
-                writer.WriteLine("Price: " + mobilia.Price);
-                writer.WriteLine("Material: " + mobilia.Material);
-                writer.WriteLine("Color: " + mobilia.Color);
+                writer.WriteLine("Mobilia: " + furniture.Name);
+                writer.WriteLine("Price: " + furniture.Price);
+                writer.WriteLine("Material: " + furniture.Material);
+                writer.WriteLine("Color: " + furniture.Color);
                 writer.WriteLine("-------------");
             }
 
-            writer.WriteLine("Total price: " + mobList.Sum(mob => mob.Price));
+            writer.WriteLine("Total price: " + furnituries.Sum(mob => mob.Price));
 
             return Task.CompletedTask;
         }
