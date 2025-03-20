@@ -6,13 +6,13 @@ namespace FactoryMethod.Adapters.Mobilia
     /// <summary>
     /// Adapter to convert the mobilia list to a list of IMobilia objects
     /// </summary>
-    public interface IMobiliaAdapter
+    public interface IFurnitureAdapter
     {
         /// <summary>
         /// Convert the mobilia list to a list of IMobilia objects
         /// </summary>
-        /// <param name="mobiliaStringList"></param>
+        /// <param name="furnitureStringList"></param>
         /// <returns></returns>
-        List<IMobilia> ConvertMobiliaListStringToIMobiliaList(List<string> mobiliaStringList, IMobiliaFactoryCreator mobiliaFactoryCreator);
+        List<IFurniture> ConvertMobiliaListStringToIMobiliaList(List<string> furnitureStringList, IFurnitureFactoryCreator furnitureFactoryCreator);
     }
 }

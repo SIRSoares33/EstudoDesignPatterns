@@ -30,8 +30,8 @@ partial class MainView
     {
         System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainView));
         label1 = new Label();
-        cmbMob = new ComboBox();
-        lstMob = new ListBox();
+        cmbFurnitureAvaible = new ComboBox();
+        lstChosenFurniture = new ListBox();
         imgAddMob = new PictureBox();
         imgRemoveMob = new PictureBox();
         imgOk = new PictureBox();
@@ -54,24 +54,24 @@ partial class MainView
         // 
         // cmbMob
         // 
-        cmbMob.FormattingEnabled = true;
-        cmbMob.Location = new Point(42, 106);
-        cmbMob.Name = "cmbMob";
-        cmbMob.Size = new Size(121, 23);
-        cmbMob.TabIndex = 1;
-        cmbMob.Items.Add("Sofá");
-        cmbMob.Items.Add("Table");
-        cmbMob.Items.Add("Chair");
-        cmbMob.Items.Add("Bed");
+        cmbFurnitureAvaible.FormattingEnabled = true;
+        cmbFurnitureAvaible.Location = new Point(42, 106);
+        cmbFurnitureAvaible.Name = "cmbMob";
+        cmbFurnitureAvaible.Size = new Size(121, 23);
+        cmbFurnitureAvaible.TabIndex = 1;
+        cmbFurnitureAvaible.Items.Add("Sofá");
+        cmbFurnitureAvaible.Items.Add("Table");
+        cmbFurnitureAvaible.Items.Add("Chair");
+        cmbFurnitureAvaible.Items.Add("Bed");
         // 
         // lstMob
         // 
-        lstMob.FormattingEnabled = true;
-        lstMob.ItemHeight = 15;
-        lstMob.Location = new Point(325, 106);
-        lstMob.Name = "lstMob";
-        lstMob.Size = new Size(120, 109);
-        lstMob.TabIndex = 2;
+        lstChosenFurniture.FormattingEnabled = true;
+        lstChosenFurniture.ItemHeight = 15;
+        lstChosenFurniture.Location = new Point(325, 106);
+        lstChosenFurniture.Name = "lstMob";
+        lstChosenFurniture.Size = new Size(120, 109);
+        lstChosenFurniture.TabIndex = 2;
         // 
         // imgAddMob
         // 
@@ -82,7 +82,7 @@ partial class MainView
         imgAddMob.SizeMode = PictureBoxSizeMode.Zoom;
         imgAddMob.TabIndex = 3;
         imgAddMob.TabStop = false;
-        imgAddMob.Click += btnAdd_Click;
+        imgAddMob.Click += AddChosenFurniture;
         imgAddMob.Cursor = Cursors.Hand;
         // 
         // imgRemoveMob
@@ -94,7 +94,7 @@ partial class MainView
         imgRemoveMob.SizeMode = PictureBoxSizeMode.Zoom;
         imgRemoveMob.TabIndex = 4;
         imgRemoveMob.TabStop = false;
-        imgRemoveMob.Click += btnRemove_Click;
+        imgRemoveMob.Click += RemoveChosenFurniture;
         imgRemoveMob.Cursor = Cursors.Hand;
         // 
         // imgOk
@@ -106,7 +106,7 @@ partial class MainView
         imgOk.SizeMode = PictureBoxSizeMode.Zoom;
         imgOk.TabIndex = 5;
         imgOk.TabStop = false;
-        imgOk.Click += btnSend_Click;   
+        imgOk.Click += SendingFurniture;   
         imgOk.Cursor = Cursors.Hand;
         // 
         // imgExit
@@ -131,8 +131,8 @@ partial class MainView
         Controls.Add(imgOk);
         Controls.Add(imgRemoveMob);
         Controls.Add(imgAddMob);
-        Controls.Add(lstMob);
-        Controls.Add(cmbMob);
+        Controls.Add(lstChosenFurniture);
+        Controls.Add(cmbFurnitureAvaible);
         Controls.Add(label1);
         FormBorderStyle = FormBorderStyle.None;
         Name = "MainView";
@@ -148,8 +148,8 @@ partial class MainView
     #endregion
 
     private Label label1;
-    private ComboBox cmbMob;
-    private ListBox lstMob;
+    private ComboBox cmbFurnitureAvaible;
+    private ListBox lstChosenFurniture;
     private PictureBox imgAddMob;
     private PictureBox imgRemoveMob;
     private PictureBox imgOk;

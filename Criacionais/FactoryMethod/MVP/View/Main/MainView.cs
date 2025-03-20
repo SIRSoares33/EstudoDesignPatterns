@@ -9,11 +9,11 @@ public partial class MainView : Form, IMainView
     #endregion
 
     #region IMainView Attributes
-    public List<string> MobListInString { get => lstMob.Items.Cast<string>().ToList(); }
+    public List<string> FurnitureListInString { get => lstChosenFurniture.Items.Cast<string>().ToList(); }
     #endregion
 
     #region IMainView Events
-    public event Action? SendMobilia;
+    public event Action? SendFurniture;
     #endregion
 
     #region IMainView Methods
@@ -22,17 +22,17 @@ public partial class MainView : Form, IMainView
     #endregion
 
     #region Event Handlers
-    private void btnAdd_Click(object sender, EventArgs e)
+    private void AddChosenFurniture(object sender, EventArgs e)
     {
-        if (string.IsNullOrEmpty(cmbMob.SelectedText))
+        if (string.IsNullOrEmpty(cmbFurnitureAvaible.SelectedText))
         { 
             ShowMessageBox("Please select a mobilia", "Error", MessageBoxIcon.Error, MessageBoxButtons.OK);
             return;
         }
-        lstMob.Items.Add(cmbMob.SelectedText);
+        lstChosenFurniture.Items.Add(cmbFurnitureAvaible.SelectedText);
     }
-    private void btnRemove_Click(object sender, EventArgs e) => lstMob.Items.Remove(lstMob.SelectedItem ?? string.Empty);
-    private void btnSend_Click(object sender, EventArgs e)   => SendMobilia?.Invoke();
-    private void Exit(object sender, EventArgs e)            => Application.Exit();
+    private void RemoveChosenFurniture(object sender, EventArgs e) => lstChosenFurniture.Items.Remove(lstChosenFurniture.SelectedItem ?? string.Empty);
+    private void SendingFurniture(object sender, EventArgs e)      => SendFurniture?.Invoke();
+    private void Exit(object sender, EventArgs e)                  => Application.Exit();
     #endregion
 }

@@ -16,7 +16,7 @@ static class Program
         ApplicationConfiguration.Initialize();
         
         // Create the mobilia factories dictionary
-        var mobiliaFactories = new Dictionary<string, IMobiliaFactory>
+        var furnitureFactories = new Dictionary<string, IFurnitureFactory>
         {
             { "Chair", new ChairFactory() },
             { "Table", new TableFactory() },
@@ -25,14 +25,14 @@ static class Program
         };
         //---------------------------------------------------------------------------------
         // Create the dependencies
-        var mobiliaFactoryCreator = new MobiliaFactoryCreator(mobiliaFactories);
-        var mobiliaAdapter        = new MobiliaAdapter();
-        var createMobiliaRelatory = new MobiliaRelatory(new TextRelatoryFormatter());
+        var furnitureFactoryCreator = new FurnitureFactoryCreator(furnitureFactories);
+        var furnitureAdapter        = new FurnitureAdapter();
+        var furnitureRelatory       = new FurnitureRelatory(new TextRelatoryFormatter());
         //---------------------------------------------------------------------------------
 
         // Create the main view, model and presenter
         var mainView  = new MainView();
-        var mainModel = new MainModel(mobiliaFactoryCreator, mobiliaAdapter, createMobiliaRelatory);
+        var mainModel = new MainModel(furnitureFactoryCreator, furnitureAdapter, furnitureRelatory);
         _             = new MainPresenter(mainView, mainModel);
 
         Application.Run(mainView);

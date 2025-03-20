@@ -5,8 +5,8 @@ namespace FactoryMethod.factories
     /// <summary>
     /// Factory to create a sofa
     /// </summary>
-    public class SofaFactory : IMobiliaFactory
+    public class SofaFactory : IFurnitureFactory
     {
-        public IMobilia CreateMobilia() => new Sofa();
+        public IFurniture CreateFurniture() => new Sofa();
     }
 }

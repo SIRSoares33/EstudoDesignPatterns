@@ -3,7 +3,7 @@ namespace FactoryMethod.Entities
     /// <summary>
     /// Interface for mobilia
     /// </summary>
-    public interface IMobilia
+    public interface IFurniture
     {
         string Name { get; }
         string Color { get; }

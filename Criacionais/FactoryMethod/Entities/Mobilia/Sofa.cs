@@ -3,7 +3,7 @@ namespace FactoryMethod.Entities
     /// <summary>
     /// Represents a sofa
     /// </summary>
-    public class Sofa : IMobilia
+    public class Sofa : IFurniture
     {
         public string Name => "Sofá";
         public string Color => "Preto";

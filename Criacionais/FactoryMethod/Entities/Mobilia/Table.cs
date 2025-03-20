@@ -3,7 +3,7 @@ namespace FactoryMethod.Entities
     /// <summary>
     /// Represents a table
     /// </summary>
-    public class Table : IMobilia
+    public class Table : IFurniture
     {
         public string Name => "Mesa";
 

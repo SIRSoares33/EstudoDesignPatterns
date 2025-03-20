@@ -1,6 +1,6 @@
 namespace FactoryMethod.Entities
 {
-    public class Bed : IMobilia
+    public class Bed : IFurniture
     {
         public string Name => "Cama";
 

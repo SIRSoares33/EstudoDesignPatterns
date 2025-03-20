@@ -2,21 +2,21 @@ using FactoryMethod.Entities;
 
 namespace FactoryMethod.Services
 {
-    public class MobiliaRelatory : IMobiliaRelatory
+    public class FurnitureRelatory : IFurnitureRelatory
     {
         #region Attributes
         private readonly IRelatoryFormatter _formatter;
         #endregion
 
         #region Constructor
-        public MobiliaRelatory(IRelatoryFormatter formatter) => _formatter = formatter;
+        public FurnitureRelatory(IRelatoryFormatter formatter) => _formatter = formatter;
         #endregion
 
         #region ICreateMobiliaRelatory Methods
-        public Task CreateRelatoryByList(List<IMobilia> mobList)
+        public Task CreateRelatoryByList(List<IFurniture> furnituries)
         {
             using StreamWriter streamWriter = new StreamWriter("Mobilia.txt");
-            return _formatter.Format(streamWriter, mobList);
+            return _formatter.Format(streamWriter, furnituries);
         }
         #endregion
     }

@@ -11,8 +11,8 @@ namespace FactoryMethod.Services
         /// Format the list of mobilia in a specific way
         /// </summary>
         /// <param name="writer"></param>
-        /// <param name="mobList"></param>
+        /// <param name="relatories"></param>
         /// <returns></returns>
-        Task Format(StreamWriter writer, List<IMobilia> mobList);
+        Task Format(StreamWriter writer, List<IFurniture> relatories);
     }
 }
