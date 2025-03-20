@@ -19,11 +19,11 @@ namespace FactoryMethod.MVP.Model
         /// <summary>
         /// Service to create the relatory
         /// </summary>
-        private readonly ICreateMobiliaRelatory _createMobiliaRelatory;
+        private readonly IMobiliaRelatory _createMobiliaRelatory;
         #endregion
 
         #region Constructor
-        public MainModel(IMobiliaFactoryCreator mobiliaFactory, IMobiliaAdapter mobiliaAdapter, ICreateMobiliaRelatory createMobiliaRelatory)
+        public MainModel(IMobiliaFactoryCreator mobiliaFactory, IMobiliaAdapter mobiliaAdapter, IMobiliaRelatory createMobiliaRelatory)
         {
             _mobiliaFactoryCreator = mobiliaFactory;
             _mobiliaAdapter        = mobiliaAdapter;
